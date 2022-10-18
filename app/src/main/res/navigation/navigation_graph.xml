@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph.xml"
+    app:startDestination="@id/menu">
+    <action
+        android:id="@+id/action_to_mealFragment"
+        app:destination="@id/mealFragment" />
+
+    <fragment
+        android:id="@+id/menu"
+        android:name="zelimkhan.magomadov.recipes.ui.menu.MenuFragment"
+        android:label="@string/menu_fragment_label"
+        tools:layout="@layout/fragment_menu" />
+    <fragment
+        android:id="@+id/favorite"
+        android:name="zelimkhan.magomadov.recipes.ui.favorite.FavoriteFragment"
+        android:label="@string/favorite_fragment_label"
+        tools:layout="@layout/fragment_favorite" />
+    <fragment
+        android:id="@+id/profile"
+        android:name="zelimkhan.magomadov.recipes.ui.profile.ProfileFragment"
+        android:label="@string/profile_fragment_label"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/mealFragment"
+        android:name="zelimkhan.magomadov.recipes.ui.meal.MealFragment"
+        android:label="{mealTitle}"
+        tools:layout="@layout/fragment_meal">
+        <argument
+            android:name="mealTitle"
+            app:argType="string" />
+        <argument
+            android:name="mealId"
+            app:argType="long" />
+    </fragment>
+</navigation>

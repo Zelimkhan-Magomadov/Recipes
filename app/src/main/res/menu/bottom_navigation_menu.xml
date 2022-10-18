@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <item
+        android:id="@id/menu"
+        android:enabled="true"
+        android:icon="@drawable/ic_fast_food"
+        android:title="@string/menu_fragment_label" />
+    <item
+        android:id="@id/favorite"
+        android:enabled="true"
+        android:icon="@drawable/ic_favorite_filled"
+        android:title="@string/favorite_fragment_label" />
+    <item
+        android:id="@id/profile"
+        android:enabled="true"
+        android:icon="@drawable/ic_profile"
+        android:title="@string/profile_fragment_label" />
+</menu>

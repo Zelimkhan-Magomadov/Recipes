@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="meal_image_size">150dp</dimen>
+    <dimen name="meal_image_size_increased">250dp</dimen>
+    <dimen name="meal_icon_size">20dp</dimen>
+    <dimen name="profile_avatar_size">150dp</dimen>
+    <dimen name="recipe_meal_image_size">300dp</dimen>
+</resources>

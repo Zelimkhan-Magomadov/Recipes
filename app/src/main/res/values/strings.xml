@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Recipes</string>
+
+    // Bottom navigation menu
+    <string name="menu_fragment_label">Меню</string>
+    <string name="favorite_fragment_label">Избранное</string>
+    <string name="profile_fragment_label">Профиль</string>
+
+    // Errors
+    <string name="network_connection_error">Ошибка интернет соединения. Будут загружены данные из кэша</string>
+    <string name="server_error">Ошибка сервера. Будут загружены данные из кэша</string>
+    <string name="api_error">Ошибка сервера. Будут загружены данные из кэша</string>
+    <string name="error_hint">Произошла ошибка, повторите попытку позже</string>
+</resources>

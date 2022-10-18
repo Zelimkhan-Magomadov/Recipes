@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layoutDescription="@xml/item_meal_scene">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/mealImage"
+        android:layout_width="@dimen/meal_image_size"
+        android:layout_height="@dimen/meal_image_size"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="@id/card"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/card"
+        style="@style/RoundImage"
+        tools:ignore="ContentDescription,SpeakableTextPresentCheck"
+        tools:src="@drawable/soup" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/meal_image_size"
+        android:layout_marginVertical="16dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="16dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="@null"
+        app:strokeWidth="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/startGuideline"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="82dp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textAppearance="@style/MealName"
+                app:layout_constraintEnd_toStartOf="@id/favorite"
+                app:layout_constraintStart_toEndOf="@id/startGuideline"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Ветчина и грибы" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/favorite"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:button="@drawable/sl_favourite"
+                app:buttonTint="@android:color/holo_red_dark"
+                app:layout_constraintBottom_toBottomOf="@id/title"
+                app:layout_constraintEnd_toEndOf="@id/endGuideline" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/ingredients"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="4dp"
+                android:ellipsize="end"
+                android:maxLines="4"
+                app:layout_constraintBottom_toTopOf="@id/categoryIcon"
+                app:layout_constraintEnd_toStartOf="@id/endGuideline"
+                app:layout_constraintStart_toEndOf="@id/startGuideline"
+                app:layout_constraintTop_toBottomOf="@id/title"
+                tools:text="В этой статье я расскажу и покажу, как создавать красивые анимированные списки на основе RecyclerView и MotionLayout. Аналогичный метод я использовал в одном из своих проектов." />
+
+            <ImageView
+                android:id="@+id/countryIcon"
+                android:layout_width="@dimen/meal_icon_size"
+                android:layout_height="@dimen/meal_icon_size"
+                android:src="@drawable/ic_flag"
+                app:layout_constraintBottom_toBottomOf="@id/bottomGuideline"
+                app:layout_constraintStart_toEndOf="@id/startGuideline"
+                tools:ignore="ContentDescription" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/country"
+                style="@style/MealInfoText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:maxWidth="60dp"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBottom_toBottomOf="@id/countryIcon"
+                app:layout_constraintStart_toEndOf="@id/countryIcon"
+                app:layout_constraintTop_toTopOf="@id/countryIcon"
+                tools:text="Spanish" />
+
+            <ImageView
+                android:id="@+id/categoryIcon"
+                android:layout_width="@dimen/meal_icon_size"
+                android:layout_height="@dimen/meal_icon_size"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/ic_category"
+                app:layout_constraintBottom_toBottomOf="@id/bottomGuideline"
+                app:layout_constraintStart_toEndOf="@id/country"
+                tools:ignore="ContentDescription" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/category"
+                style="@style/MealInfoText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBottom_toBottomOf="@id/categoryIcon"
+                app:layout_constraintEnd_toEndOf="@id/endGuideline"
+                app:layout_constraintStart_toEndOf="@id/categoryIcon"
+                app:layout_constraintTop_toTopOf="@id/categoryIcon"
+                tools:ignore="ContentDescription"
+                tools:text="Vegetarian" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/bottomGuideline"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_end="8dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/endGuideline"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="16dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.motion.widget.MotionLayout>
+
+    <!--
+    <androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layoutDescription="@xml/item_meal_scene">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/meal_image"
+        android:layout_width="@dimen/meal_image_size"
+        android:layout_height="@dimen/meal_image_size"
+        android:adjustViewBounds="true"
+        android:elevation="10dp"
+        android:layout_marginStart="16dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/soup"
+        app:layout_constraintBottom_toBottomOf="@id/card"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/card"
+        app:shapeAppearanceOverlay="@style/RoundImage"
+        app:strokeColor="@color/white"
+        app:strokeWidth="4dp"
+        tools:ignore="ContentDescription" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/meal_image_size"
+        android:layout_marginEnd="16dp"
+        android:layout_marginVertical="16dp"
+        android:layout_marginStart="100dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="@null"
+        app:strokeWidth="0dp" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/startBarrier"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:barrierDirection="end"
+        app:barrierMargin="8dp"
+        app:constraint_referenced_ids="meal_image" />
+
+    <androidx.constraintlayout.helper.widget.Layer
+        android:id="@+id/cardContent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="9dp"
+        app:constraint_referenced_ids="title, ingredients, countryIcon, country, categoryIcon, category" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textAppearance="@style/MealName"
+        app:layout_constraintEnd_toEndOf="@id/endGuideline"
+        app:layout_constraintStart_toEndOf="@id/startBarrier"
+        app:layout_constraintTop_toTopOf="@id/card"
+        tools:text="Ветчина и грибы" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/ingredients"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="4dp"
+        android:ellipsize="end"
+        android:maxLines="4"
+        app:layout_constraintBottom_toTopOf="@id/categoryIcon"
+        app:layout_constraintEnd_toStartOf="@id/endGuideline"
+        app:layout_constraintStart_toEndOf="@id/startBarrier"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        tools:text="В этой статье я расскажу и покажу, как создавать красивые анимированные списки на основе RecyclerView и MotionLayout. Аналогичный метод я использовал в одном из своих проектов." />
+
+    <ImageView
+        android:id="@+id/countryIcon"
+        android:layout_width="@dimen/meal_icon_size"
+        android:layout_height="@dimen/meal_icon_size"
+        android:src="@drawable/ic_flag"
+        app:layout_constraintBottom_toBottomOf="@id/bottomGuideline"
+        app:layout_constraintStart_toEndOf="@id/startBarrier"
+        tools:ignore="ContentDescription" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/country"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:textAppearance="@style/MealInfoText"
+        app:layout_constraintBottom_toBottomOf="@id/countryIcon"
+        app:layout_constraintStart_toEndOf="@id/countryIcon"
+        app:layout_constraintTop_toTopOf="@id/countryIcon"
+        tools:text="Spanish" />
+
+    <ImageView
+        android:id="@+id/categoryIcon"
+        android:layout_width="@dimen/meal_icon_size"
+        android:layout_height="@dimen/meal_icon_size"
+        android:layout_marginStart="32dp"
+        android:src="@drawable/ic_category"
+        app:layout_constraintBottom_toBottomOf="@id/bottomGuideline"
+        app:layout_constraintStart_toEndOf="@id/country"
+        tools:ignore="ContentDescription" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/category"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:textAppearance="@style/MealInfoText"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="@id/categoryIcon"
+        app:layout_constraintEnd_toEndOf="@id/endGuideline"
+        app:layout_constraintStart_toEndOf="@id/categoryIcon"
+        app:layout_constraintTop_toTopOf="@id/categoryIcon"
+        tools:ignore="ContentDescription"
+        tools:text="Vegetarian" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottomGuideline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="22dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/endGuideline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="32dp" />
+    </androidx.constraintlayout.motion.widget.MotionLayout>-->
